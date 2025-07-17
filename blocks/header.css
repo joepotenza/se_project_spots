@@ -3,6 +3,13 @@
   display: flex;
   padding: 10px 0;
   justify-content: center;
+
+  /*sticky header */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
 }
 
 .header__logo {
