@@ -1,21 +1,30 @@
-# Project 3: Spots
+# Spots: A Photo Sharing App
 
-### Overview  
+This project is similar in functionality to popular social media photo sharing platforms. The main page is a typical user profile, with an avatar, short bio, and a grid of photographs with titles. There are (currently non-functional) buttons for editing the bio, adding a new post, and liking the photos.
 
-* Intro  
-* Figma  
-* Images  
-  
-**Intro**
-  
-This project is made so all the elements are displayed correctly on popular screen sizes. We recommend investing more time in completing this project, since it's more difficult than previous ones.  
-  
-**Figma**  
-  
-* [Link to the project on Figma](https://www.figma.com/file/BBNm2bC3lj8QQMHlnqRsga/Sprint-3-Project-%E2%80%94-Spots?type=design&node-id=2%3A60&mode=design&t=afgNFybdorZO6cQo-1)
-  
-**Images**  
-  
-The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster. 
-  
-Good luck and have fun!
+## Technologies Used
+
+- HTML5
+- CSS3
+- Flexbox and grid layout
+- Responsive design
+- BEM flat file structure and naming conventions
+
+## Project Preview
+
+The project can be previewed on Github Pages, located at [https://joepotenza.github.io/se_project_spots](https://joepotenza.github.io/se_project_spots).
+
+## Product Design
+
+The product was designed by TripleTen using Figma. [The detailed design can be found here](https://www.figma.com/file/BBNm2bC3lj8QQMHlnqRsga/Sprint-3-Project%3A-Spots?type=design&node-id=0-1&mode=design&t=JiWpEtqxwfvfB7ba-0).
+
+## Future Improvements
+
+Planned additions to the project include:
+
+1. User sign-in
+2. Profile editing
+3. Adding, editing, and deleting photos
+4. Liking photos
+
+![Spots Project Screenshot](./images/screenshot.png)
