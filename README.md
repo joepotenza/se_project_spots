@@ -14,9 +14,9 @@ This project is similar in functionality to popular social media photo sharing p
 
 The project can be previewed on Github Pages, located at [https://joepotenza.github.io/se_project_spots](https://joepotenza.github.io/se_project_spots).
 
-## Product Design
+## Project Design
 
-The product was designed by TripleTen using Figma. [The detailed design can be found here](https://www.figma.com/file/BBNm2bC3lj8QQMHlnqRsga/Sprint-3-Project%3A-Spots?type=design&node-id=0-1&mode=design&t=JiWpEtqxwfvfB7ba-0).
+The project was designed by TripleTen using Figma. [The detailed design can be found here](https://www.figma.com/file/BBNm2bC3lj8QQMHlnqRsga/Sprint-3-Project%3A-Spots?type=design&node-id=0-1&mode=design&t=JiWpEtqxwfvfB7ba-0).
 
 ## Future Improvements
 
