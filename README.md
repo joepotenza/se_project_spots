@@ -14,6 +14,8 @@ This project is similar in functionality to popular social media photo sharing p
 
 The project can be previewed on Github Pages, located at [https://joepotenza.github.io/se_project_spots](https://joepotenza.github.io/se_project_spots).
 
+[A walkthrough video is available here](https://drive.google.com/file/d/1NdBVA_B2yl2UAbTi0POWMSqeSsJcHNvw/view?usp=sharing).
+
 ## Project Design
 
 The project was designed by TripleTen using Figma. [The detailed design can be found here](https://www.figma.com/file/BBNm2bC3lj8QQMHlnqRsga/Sprint-3-Project%3A-Spots?type=design&node-id=0-1&mode=design&t=JiWpEtqxwfvfB7ba-0).
