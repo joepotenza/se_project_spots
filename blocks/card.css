@@ -2,7 +2,7 @@
   height: 413px;
   width: 413px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 8px;
   display: block;
 }
 
@@ -55,5 +55,6 @@
   .card__like-btn {
     width: 20px;
     height: 18px;
+    background-position: center;
   }
 }
