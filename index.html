@@ -121,6 +121,65 @@
       <footer class="footer">
         <p class="footer__copyright">&copy; 2025 Spots</p>
       </footer>
+      <div class="modal">
+        <div class="modal__container">
+          <div class="modal__header">
+            <h2 class="modal__title">Edit Profile</h2>
+            <button class="modal__close-btn" type="button"></button>
+          </div>
+          <form class="modal__form">
+            <label for="edit-name" class="modal__label">
+              Name
+              <input
+                type="text"
+                class="modal__input"
+                id="edit-name"
+                placeholder="Type your name"
+              />
+            </label>
+            <label for="edit-description" class="modal__label">
+              Description
+              <input
+                type="text"
+                class="modal__input"
+                id="edit-description"
+                placeholder="Describe yourself"
+              />
+            </label>
+            <button class="modal__submit-btn" type="submit">Save</button>
+          </form>
+        </div>
+      </div>
+      <div class="modal modal_is-opened">
+        <div class="modal__container">
+          <div class="modal__header">
+            <h2 class="modal__title">New Post</h2>
+            <button class="modal__close-btn" type="button"></button>
+          </div>
+          <form class="modal__form">
+            <label for="post-link" class="modal__label">
+              Image link
+              <input
+                type="text"
+                class="modal__input"
+                id="post-link"
+                placeholder="Paste a link to the picture"
+              />
+            </label>
+            <label for="post-caption" class="modal__label">
+              Caption
+              <input
+                type="text"
+                class="modal__input"
+                id="post-caption"
+                placeholder="Type your caption"
+              />
+            </label>
+            <button class="modal__submit-btn" type="submit">Save</button>
+          </form>
+        </div>
+      </div>
+      <div class="modal"></div>
     </div>
   </body>
 </html>
