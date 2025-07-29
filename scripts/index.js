@@ -9,7 +9,7 @@ const editModalCloseBtn = editProfileModal.querySelector(".modal__close-btn");
 const editProfileName = editProfileModal.querySelector("#edit-name");
 const editProfileDescription =
   editProfileModal.querySelector("#edit-description");
-const editProfileForm = editProfileModal.querySelector(".modal__form");
+const editProfileForm = document.forms["profile-form"];
 
 // clicked on "edit profile"
 editProfileBtn.addEventListener("click", function (event) {
@@ -35,7 +35,7 @@ const newPostBtn = document.querySelector(".profile__post-btn");
 //new post modal elements
 const newPostModal = document.querySelector("#new-post-modal");
 const postModalCloseBtn = newPostModal.querySelector(".modal__close-btn");
-const newPostForm = newPostModal.querySelector(".modal__form");
+const newPostForm = document.forms["post-form"];
 const newPostImageLink = newPostModal.querySelector("#post-link");
 const newPostCaption = newPostModal.querySelector("#post-caption");
 
