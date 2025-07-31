@@ -1,3 +1,31 @@
+// Store initial cards in array
+const initialCards = [
+  {
+    name: "A Perfect Margherita Pizza",
+    link: "./images/cards/pizza1.jpg",
+  },
+  {
+    name: "My New Mazda3",
+    link: "./images/cards/mazda3.jpg",
+  },
+  {
+    name: "Citi Field - Home of the Mets",
+    link: "./images/cards/citi1.jpg",
+  },
+  {
+    name: "Capri, Italy",
+    link: "./images/cards/capri1.jpg",
+  },
+  {
+    name: "Rome, Italy",
+    link: "./images/cards/rome1.jpg",
+  },
+  {
+    name: "Venice, Italy",
+    link: "./images/card/venice.jpg",
+  },
+];
+
 //profile html elements
 const profileName = document.querySelector(".profile__name");
 const profileDescription = document.querySelector(".profile__description");
@@ -62,3 +90,8 @@ function closeEditModal(event) {
 function closeNewPostModal(event) {
   newPostModal.classList.remove("modal_is-opened");
 }
+
+//Log the card items to console
+initialCards.forEach(function (card) {
+  console.log(card.name);
+});
