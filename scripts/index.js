@@ -82,8 +82,13 @@ postModalCloseBtn.addEventListener("click", function () {
 // submitted "new post" form
 newPostForm.addEventListener("submit", function (event) {
   event.preventDefault();
-  console.log(`New Post Image Link: ${newPostImageLink.value}`);
-  console.log(`New Post Caption: ${newPostCaption.value}`);
+  addCardElement(
+    getCardElement({
+      name: newPostCaption.value,
+      link: newPostImageLink.value,
+    }),
+    true
+  );
   closeModal(newPostModal);
 });
 
@@ -112,7 +117,14 @@ function getCardElement(data) {
   return cardElement;
 }
 
+function addCardElement(newCardElement, before = false) {
+  if (before) {
+    cardsList.prepend(newCardElement);
+  } else {
+    cardsList.append(newCardElement);
+  }
+}
+
 initialCards.forEach((card) => {
-  const newCardElement = getCardElement(card);
-  cardsList.append(newCardElement);
+  addCardElement(getCardElement(card));
 });
