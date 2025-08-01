@@ -33,8 +33,7 @@
 }
 
 .card__like-btn {
-  background-image: url(../images/like_icon.svg);
-  background-size: cover;
+  background: url(../images/like_icon.svg) no-repeat 0 0 / cover transparent;
   border: 0;
   width: 23px;
   height: 20px;
@@ -85,6 +84,6 @@
   .card__like-btn {
     width: 20px;
     height: 18px;
-    background-position: center;
+    background-size: 20px 18px;
   }
 }

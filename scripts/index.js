@@ -91,6 +91,7 @@ newPostForm.addEventListener("submit", (evt) => {
       true
     );
   }
+  newPostForm.reset();
   closeModal(newPostModal);
 });
 
@@ -133,7 +134,7 @@ function getCardElement(data) {
 
   // delete button handler
   cardDeleteButton.addEventListener("click", (evt) => {
-    evt.target.closest(".card").remove();
+    cardElement.remove();
   });
 
   return cardElement;
