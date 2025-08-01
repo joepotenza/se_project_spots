@@ -1,6 +1,6 @@
 # Spots: A Photo Sharing App
 
-This project is similar in functionality to popular social media photo sharing platforms. The main page is a typical user profile, with an avatar, short bio, and a grid of photographs with titles. There are (currently non-functional) buttons for editing the bio, adding a new post, and liking the photos.
+This project is similar in functionality to popular social media photo sharing platforms. The main page is a typical user profile, with an avatar, short bio, and a grid of photographs with titles. There are buttons for editing the bio, adding a new post, and liking the photos.
 
 ## Technologies Used
 
@@ -25,8 +25,7 @@ The project was designed by TripleTen using Figma. [The detailed design can be f
 Planned additions to the project include:
 
 1. User sign-in
-2. Profile editing
-3. Adding, editing, and deleting photos
-4. Liking photos
+2. Editing photos
+3. Add a database so data changes are permanent
 
 ![Spots Project Screenshot](./images/screenshot.png)
