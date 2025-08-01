@@ -38,8 +38,17 @@
   padding: 0;
 }
 
+.card__like-btn_liked {
+  background-image: url(../images/liked_icon.svg);
+  opacity: 1;
+}
+
 .card__like-btn:hover {
   opacity: 1;
+}
+
+.card__like-btn_liked:hover {
+  opacity: 0.5;
 }
 
 @media screen and (max-width: 630px) {

@@ -108,11 +108,14 @@ function getCardElement(data) {
   const cardElement = cardTemplate.cloneNode(true);
   const cardImage = cardElement.querySelector(".card__image");
   const cardCaption = cardElement.querySelector(".card__caption");
-  const cardButton = cardElement.querySelector(".card__like-btn");
+  const cardLikeButton = cardElement.querySelector(".card__like-btn");
 
   cardImage.setAttribute("src", data.link);
   cardImage.setAttribute("alt", data.name);
   cardCaption.textContent = data.name;
+  cardLikeButton.addEventListener("click", (evt) => {
+    evt.target.classList.toggle("card__like-btn_liked");
+  });
 
   return cardElement;
 }
