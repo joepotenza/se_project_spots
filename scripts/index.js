@@ -105,16 +105,21 @@ const cardTemplate = document
   .content.querySelector(".card");
 
 function getCardElement(data) {
-  const cardElement = cardTemplate.cloneNode(true);
+  let cardElement = cardTemplate.cloneNode(true); // can't be constant when set to null on delete
   const cardImage = cardElement.querySelector(".card__image");
   const cardCaption = cardElement.querySelector(".card__caption");
   const cardLikeButton = cardElement.querySelector(".card__like-btn");
+  const cardDeleteButton = cardElement.querySelector(".card__delete-btn");
 
   cardImage.setAttribute("src", data.link);
   cardImage.setAttribute("alt", data.name);
   cardCaption.textContent = data.name;
   cardLikeButton.addEventListener("click", (evt) => {
     evt.target.classList.toggle("card__like-btn_liked");
+  });
+  cardDeleteButton.addEventListener("click", (evt) => {
+    cardElement.remove();
+    cardElement = null; // set to null for better garbage collection
   });
 
   return cardElement;
