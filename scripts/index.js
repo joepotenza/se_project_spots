@@ -22,7 +22,7 @@ const initialCards = [
   },
   {
     name: "Venice, Italy",
-    link: "./images/card/venice.jpg",
+    link: "./images/cards/venice1.jpg",
   },
 ];
 
@@ -94,7 +94,25 @@ function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
 }
 
-//Log the card items to console
-initialCards.forEach(function (card) {
-  console.log(card.name);
+const cardsList = document.querySelector(".cards__list");
+const cardTemplate = document
+  .querySelector("#cards-template")
+  .content.querySelector(".card");
+
+function getCardElement(data) {
+  const cardElement = cardTemplate.cloneNode(true);
+  const cardImage = cardElement.querySelector(".card__image");
+  const cardCaption = cardElement.querySelector(".card__caption");
+  const cardButton = cardElement.querySelector(".card__like-btn");
+
+  cardImage.setAttribute("src", data.link);
+  cardImage.setAttribute("alt", data.name);
+  cardCaption.textContent = data.name;
+
+  return cardElement;
+}
+
+initialCards.forEach((card) => {
+  const newCardElement = getCardElement(card);
+  cardsList.append(newCardElement);
 });
