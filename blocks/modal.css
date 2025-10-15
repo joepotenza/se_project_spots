@@ -88,8 +88,26 @@
   color: rgba(33, 33, 33);
 }
 
+.modal__input:hover {
+  border: 1px solid rgba(33, 33, 33, 1);
+}
+
 .modal__input::placeholder {
   color: rgba(33, 33, 33, 0.3);
+}
+
+.modal__input_has-error {
+  border: 1px solid rgba(255, 0, 0, 1);
+}
+
+.modal__error {
+  display: block;
+  color: rgba(255, 0, 0);
+  font-size: 16px;
+  font-weight: 500;
+  font-style: Medium;
+  line-height: 110%;
+  margin-top: 8px;
 }
 
 .modal__submit-btn {
@@ -105,6 +123,11 @@
 
 .modal__submit-btn:hover {
   opacity: 0.8;
+}
+
+.modal__submit-btn_disabled,
+.modal__submit-btn_disabled:hover {
+  opacity: 0.5;
 }
 
 .modal__image-container {

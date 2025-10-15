@@ -38,25 +38,37 @@ const editProfileName = editProfileModal.querySelector("#edit-name");
 const editProfileDescription =
   editProfileModal.querySelector("#edit-description");
 const editProfileForm = document.forms["profile-form"];
+const editProfileSubmitBtn =
+  editProfileForm.querySelector(".modal__submit-btn");
 
 // clicked on "edit profile"
 editProfileBtn.addEventListener("click", (evt) => {
   openModal(editProfileModal);
   editProfileName.value = profileName.textContent;
   editProfileDescription.value = profileDescription.textContent;
+  toggleButtonState(
+    [editProfileName, editProfileDescription],
+    editProfileSubmitBtn,
+    settings.inactiveButtonClass
+  );
 });
 
 // clicked on "edit profile" modal close button
-editModalCloseBtn.addEventListener("click", (evt) => {
-  closeModal(editProfileModal);
-});
+editModalCloseBtn.addEventListener("click", closeCurrentModal);
 
 // submitted "edit profile" form
 editProfileForm.addEventListener("submit", (evt) => {
   evt.preventDefault();
-  profileName.textContent = editProfileName.value;
-  profileDescription.textContent = editProfileDescription.value;
-  closeModal(editProfileModal);
+  if (editProfileName.validity.valid && editProfileDescription.validity.valid) {
+    profileName.textContent = editProfileName.value;
+    profileDescription.textContent = editProfileDescription.value;
+    toggleButtonState(
+      [editProfileName, editProfileDescription],
+      editProfileSubmitBtn,
+      settings.inactiveButtonClass
+    );
+    closeCurrentModal(evt);
+  }
 });
 
 //new post button
@@ -68,6 +80,7 @@ const postModalCloseBtn = newPostModal.querySelector(".modal__close-btn");
 const newPostForm = document.forms["post-form"];
 const newPostImageLink = newPostModal.querySelector("#post-link");
 const newPostCaption = newPostModal.querySelector("#post-caption");
+const newPostSubmitBtn = newPostModal.querySelector(".modal__submit-btn");
 
 // clicked "new post"
 newPostBtn.addEventListener("click", (evt) => {
@@ -75,14 +88,12 @@ newPostBtn.addEventListener("click", (evt) => {
 });
 
 // clicked "new post" close button
-postModalCloseBtn.addEventListener("click", (evt) => {
-  closeModal(newPostModal);
-});
+postModalCloseBtn.addEventListener("click", closeCurrentModal);
 
 // submitted "new post" form
 newPostForm.addEventListener("submit", (evt) => {
   evt.preventDefault();
-  if (newPostCaption.value && newPostImageLink.value) {
+  if (newPostCaption.validity.valid && newPostImageLink.validity.valid) {
     addCardElement(
       getCardElement({
         name: newPostCaption.value,
@@ -90,18 +101,15 @@ newPostForm.addEventListener("submit", (evt) => {
       }),
       true
     );
+    newPostForm.reset();
+    toggleButtonState(
+      [newPostCaption, newPostImageLink],
+      newPostSubmitBtn,
+      settings.inactiveButtonClass
+    );
+    closeCurrentModal(evt);
   }
-  newPostForm.reset();
-  closeModal(newPostModal);
 });
-
-//open/close modal functions
-function openModal(modal) {
-  modal.classList.add("modal_is-opened");
-}
-function closeModal(modal) {
-  modal.classList.remove("modal_is-opened");
-}
 
 //cards list elements
 const cardsList = document.querySelector(".cards__list");
@@ -162,9 +170,7 @@ const imagePreviewImage = imagePreviewModal.querySelector(".modal__image");
 const imagePreviewCaption = imagePreviewModal.querySelector(".modal__caption");
 
 // close preview modal
-imagePreviewCloseBtn.addEventListener("click", (evt) => {
-  closeModal(imagePreviewModal);
-});
+imagePreviewCloseBtn.addEventListener("click", closeCurrentModal);
 
 // show image preview
 function renderImagePreview(link, caption) {
@@ -173,3 +179,41 @@ function renderImagePreview(link, caption) {
   imagePreviewCaption.textContent = caption;
   openModal(imagePreviewModal);
 }
+
+// Condense the open/close functionality for ease of use
+
+let currentModal;
+
+const escapeListener = (evt) => {
+  if (evt.key == "Escape") {
+    closeCurrentModal(evt);
+  }
+};
+
+function closeCurrentModal(evt) {
+  if (currentModal) {
+    closeModal(currentModal);
+  }
+}
+
+function openModal(modal) {
+  modal.classList.add("modal_is-opened");
+  document.addEventListener("keydown", escapeListener);
+  currentModal = modal;
+}
+
+function closeModal(modal) {
+  modal.classList.remove("modal_is-opened");
+  document.removeEventListener("keydown", escapeListener);
+  currentModal = null;
+}
+
+// Close the active modal when clicking on the overlay (outside the modal borders)
+const allModals = document.querySelectorAll(".modal");
+allModals.forEach((modal) => {
+  modal.addEventListener("click", (evt) => {
+    if (evt.target.classList.contains("modal")) {
+      closeCurrentModal(evt);
+    }
+  });
+});
