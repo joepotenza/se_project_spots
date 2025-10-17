@@ -14,7 +14,8 @@ This project is similar in functionality to popular social media photo sharing p
 
 The project can be previewed on Github Pages, located at [https://joepotenza.github.io/se_project_spots](https://joepotenza.github.io/se_project_spots).
 
-[A walkthrough video is available here](https://drive.google.com/file/d/1NdBVA_B2yl2UAbTi0POWMSqeSsJcHNvw/view?usp=sharing).
+- [Initial Walkthrough](https://drive.google.com/file/d/1NdBVA_B2yl2UAbTi0POWMSqeSsJcHNvw/view?usp=sharing)
+- [Spots Stage 9: Project Pitch](https://drive.google.com/file/d/1YuHmJxC2MMDLIwL1n07My_i81QhkfVsK/view?usp=drive_link)
 
 ## Project Design
 
