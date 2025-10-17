@@ -43,11 +43,23 @@ const editProfileSubmitBtn =
 
 // clicked on "edit profile"
 editProfileBtn.addEventListener("click", (evt) => {
+  // open the modal
   openModal(editProfileModal);
+  // reset form fields with the current profile name and description
   editProfileName.value = profileName.textContent;
   editProfileDescription.value = profileDescription.textContent;
+
+  // fix it so errors don't show from any earlier cancelled input and the button state is correct
+  const inputList = [editProfileName, editProfileDescription];
+  inputList.forEach((inputElement) => {
+    console.log(`Checking ${inputElement.id}`);
+    const errorElement = editProfileForm.querySelector(
+      `#${inputElement.id}-error`
+    );
+    checkInputValidity(inputElement, errorElement, settings.errorClass);
+  });
   toggleButtonState(
-    [editProfileName, editProfileDescription],
+    inputList,
     editProfileSubmitBtn,
     settings.inactiveButtonClass
   );

@@ -1,6 +1,5 @@
 // Show error for input (adds error class to input and displays error message )
 const showInputError = (
-  formElement,
   inputElement,
   errorMessage,
   errorElement,
@@ -11,33 +10,22 @@ const showInputError = (
 };
 
 // Hide error for input (removes error class from input and removes error message)
-const hideInputError = (
-  formElement,
-  inputElement,
-  errorElement,
-  errorClass
-) => {
+const hideInputError = (inputElement, errorElement, errorClass) => {
   inputElement.classList.remove(errorClass);
   errorElement.textContent = "";
 };
 
 // Check validity of user input
-const checkInputValidity = (
-  formElement,
-  inputElement,
-  errorElement,
-  errorClass
-) => {
+const checkInputValidity = (inputElement, errorElement, errorClass) => {
   if (!inputElement.validity.valid) {
     showInputError(
-      formElement,
       inputElement,
       inputElement.validationMessage,
       errorElement,
       errorClass
     );
   } else {
-    hideInputError(formElement, inputElement, errorElement, errorClass);
+    hideInputError(inputElement, errorElement, errorClass);
   }
 };
 
@@ -82,12 +70,7 @@ function setEventListeners(formElement, config) {
       `#${inputElement.id}${config.inputErrorIdSuffix}`
     );
     inputElement.addEventListener("input", function () {
-      checkInputValidity(
-        formElement,
-        inputElement,
-        errorElement,
-        config.errorClass
-      );
+      checkInputValidity(inputElement, errorElement, config.errorClass);
       toggleButtonState(inputList, buttonElement, config.inactiveButtonClass);
     });
   });
