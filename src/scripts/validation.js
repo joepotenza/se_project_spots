@@ -3,7 +3,7 @@ const showInputError = (
   inputElement,
   errorMessage,
   errorElement,
-  errorClass
+  errorClass,
 ) => {
   inputElement.classList.add(errorClass);
   errorElement.textContent = errorMessage;
@@ -22,7 +22,7 @@ const checkInputValidity = (inputElement, errorElement, errorClass) => {
       inputElement,
       inputElement.validationMessage,
       errorElement,
-      errorClass
+      errorClass,
     );
   } else {
     hideInputError(inputElement, errorElement, errorClass);
@@ -59,7 +59,7 @@ function enableValidation(config) {
 function setEventListeners(formElement, config) {
   const buttonElement = formElement.querySelector(config.submitButtonSelector);
   const inputList = Array.from(
-    formElement.querySelectorAll(config.inputSelector)
+    formElement.querySelectorAll(config.inputSelector),
   );
 
   toggleButtonState(inputList, buttonElement, config.inactiveButtonClass);
@@ -67,7 +67,7 @@ function setEventListeners(formElement, config) {
   inputList.forEach((inputElement) => {
     // error element based on input ID + error suffix
     const errorElement = formElement.querySelector(
-      `#${inputElement.id}${config.inputErrorIdSuffix}`
+      `#${inputElement.id}${config.inputErrorIdSuffix}`,
     );
     inputElement.addEventListener("input", function () {
       checkInputValidity(inputElement, errorElement, config.errorClass);
@@ -86,5 +86,4 @@ const settings = {
   errorClass: "modal__input_has-error",
 };
 
-// Pass the configuration object to enableValidation when we call it.
-enableValidation(settings);
+export { enableValidation, toggleButtonState, checkInputValidity, settings };

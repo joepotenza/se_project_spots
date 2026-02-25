@@ -12,7 +12,9 @@
   padding-left: 10px;
   padding-right: 10px;
   opacity: 0;
-  transition: visibility 0s linear 0.5s, opacity 0.5s linear;
+  transition:
+    visibility 0s linear 0.5s,
+    opacity 0.5s linear;
 }
 
 .modal_is-opened {
@@ -55,6 +57,13 @@
   font-size: 32px;
   font-style: medium;
   font-weight: 500;
+}
+
+.modal__title-delete {
+  font-size: 24px;
+  color: rgba(33, 33, 33, 1);
+  margin: 0 auto 32px;
+  text-align: center;
 }
 
 .modal__label {
@@ -163,15 +172,60 @@
   max-width: 80vw;
 }
 
-.modal__close-btn_type_preview {
+.modal__close-btn_type_preview,
+.modal__close-btn_type_delete {
   background-image: url(../images/preview_close_icon.svg);
   opacity: 1;
   position: absolute;
   top: 0px;
   right: -52.5px;
 }
-.modal__close-btn_type_preview:hover {
+.modal__close-btn_type_preview:hover,
+.modal__close-btn_type_delete:hover {
   opacity: 0.4;
+}
+
+.modal__delete-btns {
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: wrap;
+}
+
+.modal__delete-btn {
+  border-radius: 8px;
+  border-style: none;
+  width: 156px;
+  padding: 18px 32px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  background: rgba(255, 101, 101, 1);
+  color: rgba(33, 33, 33, 1);
+  margin-right: 20px;
+}
+
+.modal__delete-btn:hover {
+  background: rgba(255, 51, 51, 1);
+}
+
+.modal__cancel-btn {
+  border-radius: 8px;
+  border: 1px solid #000;
+  width: 156px;
+  padding: 18px 32px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  background-color: #fff;
+  color: rgba(33, 33, 33, 1);
+}
+
+.modal__cancel-btn:hover {
+  background: rgba(33, 33, 33, 1);
+  color: #fff;
 }
 
 @media screen and (max-width: 630px) {
@@ -205,8 +259,21 @@
   .modal__caption {
     font-size: 16px;
   }
-  .modal__close-btn_type_preview {
+  .modal__close-btn_type_preview,
+  .modal__close-btn_type_delete {
     top: -40px;
     right: 0px;
+  }
+
+  .modal__delete-btns {
+    margin: 0 72px;
+  }
+
+  .modal__title-delete {
+    line-height: 120%;
+    margin: 0 0 20px 0;
+  }
+  .modal__delete-btn {
+    margin: 0 0 12px 0;
   }
 }
